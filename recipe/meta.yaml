@@ -22,7 +22,7 @@ requirements:
     - {{ compiler("cxx") }}
     - cmake >=3.18
     - ninja       # [win]
-    - pkg-config  # [unix]
+    - pkg-config
     
   host:
     - python
