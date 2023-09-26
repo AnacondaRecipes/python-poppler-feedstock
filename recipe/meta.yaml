@@ -12,9 +12,7 @@ source:
 build:
   number: 0
   skip: True  # [py<37]
-  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
-  ignore_run_exports:
-    - python
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv # [unix]
   
 requirements:
   build:
@@ -31,7 +29,7 @@ requirements:
     - setuptools
     - meson >=1.0.0
     - meson-python 
-    - poppler-cpp 22.12.0
+    - poppler 22.12.0
   run:
     - python
     - poppler
@@ -47,7 +45,7 @@ test:
 
 about:
   home: https://github.com/cbrunet/python-poppler
-  license: GPL-2.0
+  license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE.txt
   summary: 'Python binding to the poppler-cpp library'
