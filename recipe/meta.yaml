@@ -18,8 +18,6 @@ requirements:
   build:
     - {{ compiler("c") }}
     - {{ compiler("cxx") }}
-    - cmake >=3.18
-    - ninja       # [win]
     - pkg-config
     
   host:
@@ -27,7 +25,8 @@ requirements:
     - pip
     - wheel
     - setuptools
-    - meson >=1.0.0
+    - pybind11
+    - meson >=1.1.0
     - meson-python 
     - poppler 22.12.0
   run:
@@ -41,7 +40,7 @@ test:
   requires:
     - pip
   commands:
-    - pip check # [not win]
+    - pip check
 
 about:
   home: https://github.com/cbrunet/python-poppler
@@ -53,8 +52,8 @@ about:
     python-poppler is a Python binding to the poppler-cpp library. It allows to read, render, or modify PDF documents. More specifically, it currently allows to
     read an modify document meta data, list and read embedded documents, list the fonts used by the document, search or extract text on a given page of the document,
     render a page to a raw image, get info about transitions effects between the pages, read the table of contents of the document.
-  doc_url: https://github.com/cbrunet/python-poppler
-  dev_url: https://github.com/python-rapidjson/python-rapidjson
+  doc_url: https://cbrunet.net/python-poppler/
+  dev_url: https://github.com/cbrunet/python-poppler/
 
 extra:
   recipe-maintainers:
