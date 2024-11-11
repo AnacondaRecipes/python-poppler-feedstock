@@ -11,7 +11,8 @@ source:
 
 build:
   number: 1
-  skip: True  # [py<37]
+  # Poppler >=24.09.0 requires Qt which does not exist on s390x.
+  skip: True  # [py<37 or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv  # [unix]
   
 requirements:
